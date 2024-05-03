@@ -8,6 +8,10 @@ const profileRouter = new Router();
 profileRouter.get("/profiles/:id", (req, res) => {
     const profile = profiles.find((profile) => profile.id === req.params.id);
 
+    if (!profile) {
+        return res.status(403).json({ message: "Пользователь не найден" });
+    }
+
     res.status(200).json(profile);
 });
 
