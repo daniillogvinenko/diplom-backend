@@ -1,5 +1,5 @@
 import { Router } from "express";
-
+import { v4 } from "uuid";
 import { database } from "../db.js";
 
 let profiles = database.profiles;
@@ -30,6 +30,29 @@ profileRouter.post("/login", (req, res) => {
         console.log(e);
         return res.status(500).json({ message: e.message });
     }
+});
+
+profileRouter.post("/registration", (req, res) => {
+    const { username, password } = req.body;
+
+    const isExist = profiles.some((profile) => profile.email === username);
+    if (isExist) {
+        return res.status(403).json({ message: "Имя пользователя занято" });
+    }
+
+    profiles.push({
+        id: v4(),
+        firstname: "",
+        phoneNumber: "",
+        email: username,
+        address: "",
+        password,
+        cart: {},
+    });
+
+    const resProfile = profiles.find((profile) => profile.email === username);
+
+    return res.json(resProfile);
 });
 
 profileRouter.patch("/profiles/:id", (req, res) => {
