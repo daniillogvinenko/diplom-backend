@@ -4,9 +4,9 @@ export const database = {
             id: "1",
             firstname: "Даниил",
             phoneNumber: "+7 (222) 222-22-22",
-            email: "test",
+            email: "test1",
             address: "ул. Большая Морская",
-            password: "test",
+            password: "$2b$10$fuiGHqzyrIONKcSaNOmULOZfOQ/MCYt3fa7S4hm9Twv6IwSLMAlMq",
             cart: {
                 9: "2",
                 13: "2",
@@ -36,7 +36,7 @@ export const database = {
             phoneNumber: "+7 (222) 222-22-22",
             email: "test2",
             address: "ул. Большая Морская 18, 2",
-            password: "test2",
+            password: "$2b$10$fuiGHqzyrIONKcSaNOmULOZfOQ/MCYt3fa7S4hm9Twv6IwSLMAlMq",
             cart: {
                 1: "2",
             },
@@ -77,7 +77,7 @@ export const database = {
             phoneNumber: "+7 (222) 222-22-22",
             email: "333@gmail.com",
             address: "ул. Большая Морская 18, 3",
-            password: "333333",
+            password: "$2b$10$fuiGHqzyrIONKcSaNOmULOZfOQ/MCYt3fa7S4hm9Twv6IwSLMAlMq",
             cart: {},
             orders: [
                 {

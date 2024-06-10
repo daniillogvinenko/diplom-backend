@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { v4 } from "uuid";
 import { database } from "../db.js";
-import { compare, hashSync } from "bcrypt";
+import { compare, compareSync, hashSync } from "bcrypt";
 
 let profiles = database.profiles;
 const profileRouter = new Router();
@@ -31,7 +31,8 @@ profileRouter.post("/login", (req, res) => {
             return res.status(403).json({ message: "Пользователь не найден" });
         }
 
-        const isPasswordValid = compare(password, profileFromDb.password);
+        const isPasswordValid = compareSync(password, profileFromDb.password);
+        console.log(password, profileFromDb.password);
         if (isPasswordValid) {
             return res.json(profileFromDb);
         }
@@ -52,7 +53,7 @@ profileRouter.post("/registration", (req, res) => {
     }
 
     const hashPassword = hashSync(password, 10);
-
+    console.log(hashPassword);
     profiles.push({
         id: v4(),
         firstname: "",
