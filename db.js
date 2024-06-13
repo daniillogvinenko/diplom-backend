@@ -5,7 +5,7 @@ export const database = {
             firstname: "Даниил",
             phoneNumber: "+7 (222) 222-22-22",
             email: "login",
-            address: "ул. Большая Морская",
+            address: "ул. Коллонтай, 16к1, 215",
             password: "$2b$10$fuiGHqzyrIONKcSaNOmULOZfOQ/MCYt3fa7S4hm9Twv6IwSLMAlMq",
             cart: {
                 9: "2",
